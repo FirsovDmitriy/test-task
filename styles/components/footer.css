@@ -1,0 +1,27 @@
+.footer {
+  padding: 40px 0;
+}
+
+.footer__row {}
+
+.footer-nav {}
+
+.footer-nav__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav__item {
+  margin: 0 20px 0 0;
+}
+
+@media (max-width: 576px) {
+  .footer-nav__list {
+    flex-direction: column;
+  }
+
+  .footer-nav__item {
+    margin: 0 0 20px 0;
+  }
+}

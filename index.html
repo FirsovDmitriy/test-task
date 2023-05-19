@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark" />
+  <link
+    class="dark-styles"
+    rel="stylesheet" 
+    href="styles/dark.css" 
+    
+  >
+  <link
+    class="light-styles"
+    rel="stylesheet" 
+    href="styles/light.css" 
+    
+  >
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Input task</title>
+</head>
+<body class="page__body">
+  
+  <div class="page__wrapper">
+    <header class="header">
+      <div class="header__row container">
+        <div class="header__col">
+          <span>
+            <svg width="20" height="20">
+              <use xlink:href="img/sprite.svg#logo" />
+            </svg>
+          </span>
+          <nav class="header-nav">
+            <div class="header-nav__body">
+              <ul class="header-nav__list">
+                <li class="header-nav__item">
+                  <a href="#category1" class="header-nav__link nav-link">Стулья</a>
+                </li>
+                <li class="header-nav__item">
+                  <a href="#category2" class="header-nav__link nav-link">Столы</a>
+                </li>
+                <li class="header-nav__item">
+                  <a href="#category3" class="header-nav__link nav-link">Двухспальные кровати</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="header__col">
+          <button class="header__button" data-theme-switch="light" aria-label="Switch theme">
+            <svg width="20" height="20">
+              <use class="header__icon-cloud-moon" xlink:href="img/sprite.svg#cloud-moon" data-icon="dark" />
+              <use class="header__icon-sun" xlink:href="img/sprite.svg#sun" data-icon="light" />
+            </svg>
+          </button>
+          <button class="burger">
+            <svg width="30" height="30">
+              <use class="burger__icon-close"  xlink:href="img/sprite.svg#close" />
+              <use class="burger__icon-burger" xlink:href="img/sprite.svg#burger" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="page__content" id="root">
+      <div class="page__title">
+        <h1 class="container">Категории</h1>
+      </div>
+      <div class="category container" id="category1">
+        <h2 class="category__title">Стулья</h2>
+        <div class="category__wrapper" id="chairs"></div>
+      </div>
+      <!-- ./category container -->
+      <div class="category container" id="category2">
+        <h2 class="category__title">Столы</h2>
+        <div class="category__wrapper" id="tables"></div>
+      </div>
+      <!-- ./category container -->
+      <div class="category container" id="category3">
+        <h2 class="category__title">Двухспальные кровати</h2>
+        <div class="category__wrapper" id="beds"></div>
+      </div>
+      <!-- ./category container -->
+    </main>
+    <footer class="footer">
+      <div class="footer__row container">
+        <div class="footer-nav">
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <a href="#category1" class="footer-nav__link nav-link">Стулья</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#category2" class="footer-nav__link nav-link">Столы</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#category3" class="footer-nav__link nav-link">Двухспальные кровати</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="target"></div>
+  </div>
+
+  <div class="popup" data-modal="">
+    <div class="popup__body popup__body--visible">
+      <div class="popup__content">
+        <button class="popup__close" aria-label="Close">
+          <svg width="20" height="20">
+            <use xlink:href="img/sprite.svg#close" />
+          </svg>
+        </button>
+        <form action="#" class="form">
+          <input class="form__input form-item" name="quantity" type="number" placeholder="Количество" required>
+          <div class="form__colors form-item">
+            <label class="form__label">
+              <input class="form__radio" value="black" type="radio" name="color">
+              <span class="form__color form__color--black"></span>
+              Black
+            </label>
+            <label class="form__label">
+              <input class="form__radio" value="navy" type="radio" name="color">
+              <span class="form__color form__color--navy"></span>
+              Navy
+            </label>
+            <label class="form__label">
+              <input class="form__radio" value="seagreen" type="radio" name="color">
+              <span class="form__color form__color--seagreen"></span>
+              Seagreen
+            </label>
+          </div>
+          <!-- ./form__colors -->
+          <textarea class="form__textarea form-item" name="comment" id="" cols="30" rows="5" maxlength="2000" placeholder="Ваш комментарий" required></textarea>
+          <button class="form__button" type="submit" aria-label="Buy">Купить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup-overlay popup-overlay--visible" data-overlay=""></div>
+  </div>
+
+  <div class="success popup" data-modal="success">
+    <div class="success__body popup__body popup__body--visible">
+      <div class="success__content">
+        <div class="success__text" id="success-root">
+          <p>Спасибо за покупку</p>
+        </div>
+      </div>
+    </div>
+    <div class="popup-overlay popup-overlay--visible"></div>
+  </div>
+  
+  <button class="up" aria-label="Scroll up">
+    <svg width="20" height="20">
+      <use xlink:href="img/sprite.svg#arrow-up" />
+    </svg>
+  </button>
+
+  <script type="module" src="scripts/index.js"></script>
+</body>
+</html>

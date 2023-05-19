@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/CeraPro-regular.woff2') format('woff2'),
+        url('../font/CeraPro-regular.woff') format('woff');
+}

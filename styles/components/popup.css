@@ -1,0 +1,139 @@
+.popup, .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal--active {
+  pointer-events: all;
+}
+
+.modal--active .popup-overlay--visible {
+  opacity: 1;
+}
+
+.modal--active .popup__body--visible {
+  --translateY: 0;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup__body {
+  --translateY: -900%;
+  transform: translateY(var(--translateY));
+  z-index: 99;
+  transition: all 0.2s ease-in-out;
+}
+
+.popup__content {
+  position: relative;
+  max-width: 600px;
+  padding: 60px;
+  border-radius: 20px;
+  background-color: var(--back-color);
+  border: 1px solid var(--text-color);
+}
+
+.popup__close {
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.form {}
+
+.form__input, .form__textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  background-color: var(--back-color);
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+}
+
+.form__colors {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form__label:last-child {
+  margin: 0;
+}
+
+.form__color {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.form__color--black {
+  background-color: #000000;
+}
+.form__color--navy {
+  background-color: #000080;
+}
+.form__color--seagreen {
+  background-color: #2e8b57;
+}
+
+.form__button {
+  padding: 16px 90px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFF;
+  background-color: var(--sunshade);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+}
+
+@media (any-hover: hover) {
+  .form__button:hover {
+    opacity: 0.8;
+  }
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-item:last-child {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .popup__content {
+    max-width: 400px;
+    padding: 40px 20px;
+  }
+}

@@ -1,0 +1,16 @@
+.success {}
+
+.success__content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  padding: 40px;
+  background-color: var(--back-color);
+  border-radius: 20px;
+  background: #B6CA47;
+}
+
+.success__text {
+  font-size: 18px;
+}
